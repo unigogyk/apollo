@@ -7,18 +7,44 @@
 							http://www.springframework.org/schema/aop		http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 						  	http://www.springframework.org/schema/context	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
-	<!-- 数据库相关配置 -->
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<value>/WEB-INF/properties/jdbc.properties</value>
 		</property>
 	</bean>
+
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="current_session_context_class">thread</prop>
+			 
+			</props>
+		</property>
+		<property name="packagesToScan" value="ustc.sse.apollo.model"/>
+	</bean>
+
+
 	
+	<context:component-scan  base-package="ustc.sse.apollo.service.impl" />
 
-
-
-
-
+	<context:component-scan  base-package="ustc.sse.apollo.dao.impl" />
 
 </beans>

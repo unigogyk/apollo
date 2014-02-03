@@ -3,16 +3,17 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
+	
 	<display-name>apollo</display-name>
 
 
 	<servlet>
-		<servlet-name>springMVC</servlet-name>
+		<servlet-name>apollo</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>springMVC</servlet-name>
+		<servlet-name>apollo</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
