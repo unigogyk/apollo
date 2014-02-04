@@ -41,7 +41,9 @@
 		<property name="packagesToScan" value="ustc.sse.apollo.model"/>
 	</bean>
 
-
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 	
 	<context:component-scan  base-package="ustc.sse.apollo.service.impl" />
 
