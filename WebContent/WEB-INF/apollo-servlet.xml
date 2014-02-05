@@ -33,6 +33,10 @@
 		<property name="cache" value="true" />
 		<property name="prefix" value="" />
 		<property name="suffix" value=".html" />
+		<property name="contentType" value="text/html; charset=UTF-8" />
+		<property name="toolboxConfigLocation" value="/WEB-INF/tools.xml" />
+		<property name="dateToolAttribute" value="dateTool" />
+		<property name="numberToolAttribute" value="numberTool" />
 	</bean>
 
 </beans>

@@ -1,0 +1,20 @@
+<toolbox>
+	<data type="string">
+		<key>systemName</key>
+		<value>IT英语在线考试</value>
+	</data>
+	
+	<data type="string">
+		<key>manageName</key>
+		<value>IT英语在线考试后台管理系统</value>
+	</data>
+	
+
+   <tool>
+ 	<key>date</key>
+ 	<scope>request</scope>
+ 	<class>org.apache.velocity.tools.generic.DateTool</class>
+ </tool>
+
+  
+</toolbox>
