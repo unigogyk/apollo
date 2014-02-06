@@ -1,6 +1,6 @@
 package ustc.sse.apollo.dao;
 
-public interface StudentDao {
+public interface UserDao {
 
 	
 }
