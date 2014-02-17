@@ -47,7 +47,7 @@ public class SystemController {
 	public String addUser(HttpServletRequest request){
 		UstcUser user = new UstcUser();
 		user.setStuno(request.getParameter("stuno"));
-		user.setPassowrd(request.getParameter("password"));
+		user.setpassword(request.getParameter("password"));
 
 		userService.addUser(user);
 		return "success";

@@ -13,7 +13,7 @@ public class UstcUser {
 	
 	private String stuno;
 	
-	private String passowrd;
+	private String password;
 
 	public int getId() {
 		return id;
@@ -31,12 +31,12 @@ public class UstcUser {
 		this.stuno = stuno;
 	}
 
-	public String getPassowrd() {
-		return passowrd;
+	public String getpassword() {
+		return password;
 	}
 
-	public void setPassowrd(String passowrd) {
-		this.passowrd = passowrd;
+	public void setpassword(String password) {
+		this.password = password;
 	}
 	
 	

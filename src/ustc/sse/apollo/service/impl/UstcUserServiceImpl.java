@@ -1,5 +1,7 @@
 package ustc.sse.apollo.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +19,6 @@ public class UstcUserServiceImpl implements UstcUserService{
 		userDao.addUser(user);
 	}
 	
-	
-	
-	
-	
-
 	public UstcUserDao getUserDao() {
 		return userDao;
 	}
@@ -29,6 +26,12 @@ public class UstcUserServiceImpl implements UstcUserService{
 	@Autowired
 	public void setUserDao(UstcUserDao userDao) {
 		this.userDao = userDao;
+	}
+
+	@Override
+	public List<UstcUser> ListAllUser() {
+		
+		return userDao.ListAllUser();
 	}
 
 	

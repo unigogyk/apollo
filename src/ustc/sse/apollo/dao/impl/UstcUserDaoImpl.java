@@ -1,19 +1,24 @@
 package ustc.sse.apollo.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
 import ustc.sse.apollo.dao.UstcUserDao;
 import ustc.sse.apollo.model.UstcUser;
+import ustc.sse.apollo.util.BusinessException;
 
 @Repository
-public class UstcUserDaoImpl extends GeneralDaoImpl implements UstcUserDao {
+public class UstcUserDaoImpl extends AbstractSpringDAO<UstcUser> implements UstcUserDao {
 	
 	@Override
 	public void addUser(UstcUser user) {
-		
-		getHibernateTemplate().save(user);
+		try {
+			addEntity(user);
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -23,8 +28,13 @@ public class UstcUserDaoImpl extends GeneralDaoImpl implements UstcUserDao {
 
 	@Override
 	public List<UstcUser> ListAllUser() {
-		
-		return null;
+		List<UstcUser> list = new ArrayList<UstcUser>();
+		try{
+			list = findAllEntity();
+		} catch(BusinessException e){
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 	@Override
