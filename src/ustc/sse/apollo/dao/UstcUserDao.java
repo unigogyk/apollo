@@ -18,8 +18,9 @@ public interface UstcUserDao {
 
 	/**
 	 * 根据id查找用户
+	 * @return 
 	 */
-	public void findUserById(int id);
+	public UstcUser findUserById(int id);
 	
 	/**
 	 * 查找所有用户
@@ -35,5 +36,10 @@ public interface UstcUserDao {
 	 * 删除用户
 	 */
 	public void delUser(UstcUser user);
+	
+	/**
+	 * 更新用户信息
+	 */
+	public void updateUser(UstcUser user);
 	
 }

@@ -6,7 +6,10 @@
 </head>
 <body>
 	#foreach($UstcUser in $UstcUsers)
-		$UstcUser.stuno &nbsp;&nbsp; $UstcUser.password <hr>
+		$UstcUser.id &nbsp;&nbsp; $UstcUser.stuno &nbsp;&nbsp; $UstcUser.password &nbsp;&nbsp;
+		<a href="finduser.action?id=$UstcUser.id">查看信息</a>&nbsp;&nbsp;
+		<a href="deluser.action?id=$UstcUser.id">删除</a> &nbsp;&nbsp;
+		<a href="edituser.html?id=$UstcUser.id">更新</a><hr>
 	#end
 	
 	

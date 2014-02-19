@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>更新用户信息</title>
+</head>
+<body>
+	<form action="updateuser.action?id=$ustcuser.id" method="post">
+		学号：<input type="text" name="stuno" value="$ustcuser.stuno"><br>
+		密码：<input type="text" name="password" value="$ustcuser.password">
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>

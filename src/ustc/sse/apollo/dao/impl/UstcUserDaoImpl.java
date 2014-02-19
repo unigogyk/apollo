@@ -22,8 +22,14 @@ public class UstcUserDaoImpl extends AbstractSpringDAO<UstcUser> implements Ustc
 	}
 
 	@Override
-	public void findUserById(int id) {
-		
+	public UstcUser findUserById(int id) {
+		UstcUser user = null;
+		try{
+			user = findById(id);
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+		return user;
 	}
 
 	@Override
@@ -39,16 +45,29 @@ public class UstcUserDaoImpl extends AbstractSpringDAO<UstcUser> implements Ustc
 
 	@Override
 	public List<UstcUser> showUser(String hql) {
-		// TODO Auto-generated method stub
-		return null;
+		List<UstcUser> list = new ArrayList<UstcUser>();
+		try {
+			list = findByHql(hql);
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 	@Override
 	public void delUser(UstcUser user) {
-		// TODO Auto-generated method stub
-		
+		try {
+			delEntity(user);
+		} catch (BusinessException e) {
+			e.printStackTrace();
+		}
 	}
-
 	
-	
+	public void updateUser(UstcUser user){
+		try{
+			updateEntity(user);
+		} catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }

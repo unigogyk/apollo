@@ -14,11 +14,6 @@ public class UstcUserServiceImpl implements UstcUserService{
 
 	private UstcUserDao userDao;
 	
-	@Override
-	public void addUser(UstcUser user) {
-		userDao.addUser(user);
-	}
-	
 	public UstcUserDao getUserDao() {
 		return userDao;
 	}
@@ -27,12 +22,38 @@ public class UstcUserServiceImpl implements UstcUserService{
 	public void setUserDao(UstcUserDao userDao) {
 		this.userDao = userDao;
 	}
+	
+	@Override
+	public void addUser(UstcUser user) {
+		userDao.addUser(user);
+	}
+	
 
 	@Override
 	public List<UstcUser> ListAllUser() {
-		
 		return userDao.ListAllUser();
 	}
 
+	@Override
+	public UstcUser findUserById(int id) {
+		return userDao.findUserById(id);
+	}
+
+	@Override
+	public List<UstcUser> showUser(String hql) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void delUser(UstcUser user) {
+		userDao.delUser(user);
+	}
+
+	@Override
+	public void updateUser(UstcUser user) {
+		userDao.updateUser(user);
+	}
 	
 }
