@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>试卷管理</title>
+</head>
+<body>
+	#foreach ($paper in $papers)
+		$paper.id &nbsp;&nbsp;	$paper.courseName &nbsp;&nbsp;
+		$paper.paperName &nbsp;&nbsp; $paper.paperValue &nbsp;&nbsp;
+		<a href="findpaper.action?id=$paper.id">查看</a>&nbsp;&nbsp;
+		<a href="delpaper.action?id=$paper.id">删除</a>&nbsp;&nbsp;
+		<a href="editpaper.html?id=$paper.id">更新</a><br>
+		
+	#end
+	<a href="addpaper.html">添加试卷</a>
+	
+</body>
+</html>

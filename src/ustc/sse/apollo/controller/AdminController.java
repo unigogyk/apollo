@@ -82,6 +82,21 @@ public class AdminController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/admin/adduser.html")
+	public ModelAndView addUser(){
+		return new ModelAndView();
+	}
+	
+	@RequestMapping(value="/admin/adduser.action")
+	public String addUser(HttpServletRequest request){
+		UstcUser user = new UstcUser();
+		user.setStuno(request.getParameter("stuno"));
+		user.setpassword(request.getParameter("password"));
+
+		userService.addUser(user);
+		return "redirect:listuser.html";
+	}
+	
 	public UstcUserService getUserService() {
 		return userService;
 	}

@@ -40,4 +40,79 @@ public class Paper {
 	
 	//考试须知
 	private String notice;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPaperName() {
+		return paperName;
+	}
+
+	public void setPaperName(String paperName) {
+		this.paperName = paperName;
+	}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getCourseNo() {
+		return courseNo;
+	}
+
+	public void setCourseNo(String courseNo) {
+		this.courseNo = courseNo;
+	}
+
+	public int getPaperValue() {
+		return paperValue;
+	}
+
+	public void setPaperValue(int paperValue) {
+		this.paperValue = paperValue;
+	}
+
+	public int getExamDuration() {
+		return examDuration;
+	}
+
+	public void setExamDuration(int examDuration) {
+		this.examDuration = examDuration;
+	}
+
+	public Date getExamStartTime() {
+		return examStartTime;
+	}
+
+	public void setExamStartTime(Date examStartTime) {
+		this.examStartTime = examStartTime;
+	}
+
+	public Date getExamEndTime() {
+		return examEndTime;
+	}
+
+	public void setExamEndTime(Date examEndTime) {
+		this.examEndTime = examEndTime;
+	}
+
+	public String getNotice() {
+		return notice;
+	}
+
+	public void setNotice(String notice) {
+		this.notice = notice;
+	}
+	
+	
+	
 }
